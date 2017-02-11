@@ -7,3 +7,5 @@
 -  unity client
 -  node server 
 -  bug Fix
+- [ ] remote server
+- [ ] client start window
