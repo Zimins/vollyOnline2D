@@ -19,3 +19,7 @@
 /Users/Zimincom/gameDev/vollyOnline2D/vollyOnline2D/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/Zimincom/gameDev/vollyOnline2D/vollyOnline2D/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/Zimincom/gameDev/vollyOnline2D/vollyOnline2D/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/Zimincom/gameDev/vollyOnline2D/vollyOnline2D/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/Zimincom/gameDev/vollyOnline2D/vollyOnline2D/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/Zimincom/gameDev/vollyOnline2D/vollyOnline2D/Temp/bin/Debug/UnityEngine.Advertisements.dll
+/Users/Zimincom/gameDev/vollyOnline2D/vollyOnline2D/Temp/bin/Debug/UnityEngine.Purchasing.dll

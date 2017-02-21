@@ -2,49 +2,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SocketIO;
+using CnControls;
 
 public class PlayerController : MonoBehaviour {
 
-	private SocketIOComponent socket;
-	Rigidbody2D rb2d;
 
+	Rigidbody2D rb2d;
 	public float speedX;
 	public float speedJump;
-	public GameObject sprite;
+
 	bool isGrounded=true;
 
 
 	void Awake(){
+
 		rb2d = GetComponent<Rigidbody2D> ();
 	}
 	public void start(){
 		
-		socket = GetComponent<SocketIOComponent> ();
-
 	}
 
 
 	void FixedUpdate () {
 
 
+		if (CnInputManager.GetAxis("Horizontal")>0) {
+			MoveRight ();
+		} else if (CnInputManager.GetAxis("Horizontal")<0) {
+			MoveLeft ();
+		}
 
-		if (Input.GetAxis ("Horizontal") > 0) {
-			transform.Translate (Vector2.right * speedX * Time.deltaTime);
-		} else if (Input.GetAxis ("Horizontal") < 0) {
-			transform.Translate (Vector2.left * speedX * Time.deltaTime);
-		}else if(Input.GetButtonDown("Jump")&&isGrounded){
+		if(CnInputManager.GetAxis("Vertical")>0&&isGrounded){
 			isGrounded = false;
 			Debug.Log ("Jump!");
-			rb2d.AddForce (Vector2.up*speedJump*10f);
+			Jump ();
 		}
 
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
-		Debug.Log (coll.gameObject.name);
 		if (coll.gameObject.name == "LeftFloor") {
 			isGrounded = true;
 		};
+	}
+
+	public void Jump(){
+		this.rb2d.AddForce (Vector2.up*speedJump*10f);
+	}
+	public void MoveRight(){
+		Debug.Log ("right button pushed");
+		Debug.Log (transform.position.x.ToString());
+		transform.Translate (Vector2.right * speedX*Time.deltaTime);
+	}
+
+	public void MoveLeft(){
+		Debug.Log (transform.position.x.ToString());
+		transform.Translate (Vector2.left * speedX * Time.deltaTime);
 	}
 
 
