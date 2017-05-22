@@ -1,11 +1,13 @@
-#2D unity 배구 온라인 
+# 2D unity 배구 온라인 
 
-#Server 
--node
+# Client
+* unity
 
-#TODO
--  unity client
--  node server 
--  bug Fix
-- [ ] remote server
-- [ ] client start window
+# Preview
+
+# Server 
+* node.js
+* websocket
+
+# TODO
+
